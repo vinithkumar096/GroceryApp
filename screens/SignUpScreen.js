@@ -1,4 +1,4 @@
-import React from "react",
+import React from "react";
 import { View, Text,StyleSheet,ScrollView,TouchableOpacity} from "react-native";
 import { Button } from "react-native-elements";
 import { SocialIcon } from "react-native-elements";
@@ -150,3 +150,4 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
 });
+export default SignUpScreen;

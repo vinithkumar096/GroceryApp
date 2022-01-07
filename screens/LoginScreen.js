@@ -1,11 +1,11 @@
-import React from "react",
+import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity} from "react-native";
 import { Button } from "react-native-elements";
 import { SocialIcon } from "react-native-elements";
 
 
 
-const LoginScreen = () =>
+const LoginScreen = () =>{
 
   return (
     <View style={styles.container}>
@@ -67,8 +67,8 @@ const LoginScreen = () =>
       </View>
     </View>
   );
-}
 
+        }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -132,3 +132,4 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
 });
+export default LoginScreen;
