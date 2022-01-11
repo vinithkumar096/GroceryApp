@@ -10,6 +10,8 @@ const navigator = createStackNavigator(
     Account : AccountScreen,
     Login: LoginScreen,
     SignUp: SignUpScreen,
+    Cart: CartScreen,
+    Search: SearchScreen,
     
   },
   {
