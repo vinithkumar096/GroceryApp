@@ -29,6 +29,7 @@ const ViewOrdersScreen = ({navigation}) => {
             </View>
             <ScrollView>
             <Text style={{textAlign: "center", color: "gray", marginTop: 32}}>No orders</Text>
+             <AdminOrderItem />
             </ScrollView>
         </View>
         </ScrollView>
