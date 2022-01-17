@@ -40,7 +40,7 @@ export default function HomeScreen({ navigation, route }) {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container1}>
       <ScrollView 
         refreshControl={
           <RefreshControl
@@ -66,7 +66,7 @@ export default function HomeScreen({ navigation, route }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container1: {
     flex: 1,
     position: "relative",
     backgroundColor: "#fff",

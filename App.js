@@ -6,6 +6,8 @@ import LoginScreen from "./screens/LoginScreen";
 import SearchScreen from "./screens/SearchScreen";
 import SignUpScreen from "./screens/SignUpScreen";
 import HomeScreen from "./screens/HomeScreen";
+import colors from "./constants/colors";
+
 const navigator = createStackNavigator(
   {
     Home: HomeScreen,
