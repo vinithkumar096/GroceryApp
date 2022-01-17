@@ -9,7 +9,7 @@ import {
   RefreshControl,
 } from "react-native";
 import ProductCategory from "../components/ProductCategory";
-
+import colors from "../constants/colors";
 import { getFruits, getVegetables } from "../helpers/methods";
 
 export default function HomeScreen({ navigation, route }) {
