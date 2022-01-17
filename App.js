@@ -14,7 +14,10 @@ const navigator = createStackNavigator(
     SignUp: SignUpScreen,
     Cart: CartScreen,
     Search: SearchScreen,
+<<<<<<< HEAD
 
+=======
+>>>>>>> 99f7d7d17ee7d12d4f93fc804e37f5f6d90680f8
     
   },
   {
