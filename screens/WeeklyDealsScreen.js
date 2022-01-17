@@ -1,5 +1,5 @@
-import { StyleSheet, View, Text } from "react-native";
-import { Button } from "react-native-elements";
+import { StyleSheet, View, Text,Button } from "react-native";
+//import { Button } from "react-native-elements";
 import DealItem from "../components/DealItem";
 import colors from "../constants/colors";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";

@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity,Button } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { Button } from "react-native-elements";
+//import { Button } from "react-native-elements";
 
 const AccountScreen = () => {
     return (
@@ -114,4 +114,3 @@ const styles = StyleSheet.create({
       alignSelf: "center",
     },
 });
-export default AccountScreen;

@@ -1,9 +1,7 @@
 import React from "react";
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView,Button } from "react-native";
 import { StyleSheet } from "react-native";
-import { Button } from "react-native-elements";
-
-
+//import { Button } from "react-native-elements";
 
 const CartScreen = () => {
 
@@ -49,3 +47,4 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
 });
+export default CartScreen;

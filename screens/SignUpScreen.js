@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text,StyleSheet,ScrollView,TouchableOpacity} from "react-native";
-import { Button } from "react-native-elements";
-import { SocialIcon } from "react-native-elements";
+import { View, Text,StyleSheet,ScrollView,TouchableOpacity,Button} from "react-native";
+//import { Button } from "react-native-elements";
+//import { SocialIcon } from "react-native-elements";
 
 
 const SignUpScreen = () => {

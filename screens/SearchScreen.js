@@ -1,11 +1,10 @@
 import React from "react";
-import { StyleSheet, View, ScrollView, Text } from "react-native";
+import { StyleSheet, View, ScrollView, Text,Button } from "react-native";
 import { Button, Input } from "react-native-elements";
+import Icon from "react-native-vector-icons/MaterialIcons";
+import McIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
-
-
-
-
+const SearchScreen = () =>{
     return (
         <View style={styles.searchView}>
             <Input
@@ -84,8 +83,9 @@ import { Button, Input } from "react-native-elements";
                             size={20}
                             color={sort === "title" ? "white" : "rgba(51, 51, 51, 0.75)"}
                         />
-                    }
                     
+                    }
+                
             
 
             <ScrollView>
@@ -118,6 +118,7 @@ import { Button, Input } from "react-native-elements";
                     ))}
                 </View>
             </ScrollView>
+        </View>
         </View>
     );
 }
@@ -171,3 +172,4 @@ const styles = StyleSheet.create({
         overflow: "hidden",
     },
 });
+export default SearchScreen;
