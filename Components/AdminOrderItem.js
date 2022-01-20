@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome5";
-import AdminOrderItem from "../Components/AdminOrderItem";
+import AdminOrderItem from "./AdminOrderItem";
 
 const ViewOrdersScreen = ({navigation}) => {
     const goBack = () => {
