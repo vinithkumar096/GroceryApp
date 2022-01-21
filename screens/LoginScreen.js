@@ -1,11 +1,27 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity,Button} from "react-native";
-//import { Button } from "react-native-elements";
-//import { SocialIcon } from "react-native-elements";
+import { useState } from "react";
+import { View, Text, StyleSheet, KeyboardAvoidingView } from "react-native";
+import { Button, Input } from "react-native-elements";
+import { SocialIcon } from "react-native-elements";
+
+import { useAuth } from "../context/AuthProvider";
+import { useGoogleSignIn, useFacebookSignIn } from "../helpers/socialAuth";
+import colors from "../constants/colors";
 
 
+export default function LoginScreen({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { signInWithGoogle } = useGoogleSignIn();
+  const { signInWithFacebook } = useFacebookSignIn();
+  const { login } = useAuth();
 
-const LoginScreen = () =>{
+  function goToSignUp() {
+    navigation.navigate("SignUpScreen");
+  }
+
+  function onSubmit() {
+    login(email, password)
+  }
 
   return (
     <View style={styles.container}>
@@ -22,7 +38,15 @@ const LoginScreen = () =>{
         Log in
       </Text>
 
-      
+      <KeyboardAvoidingView style={styles.inputViewStyle} behaviour="padding">
+        <Text style={styles.inputlabelStyle}>Email</Text>
+        <Input
+          placeholder="Enter Email..."
+          keyboardType="email-address"
+          inputStyle={styles.inputStyle}
+          inputContainerStyle={styles.inputContainerStyle}
+          onChangeText={(text) => setEmail(text.trim())}
+        />
         <Text style={styles.inputlabelStyle}>Password</Text>
         <Input
           placeholder="Enter Password..."
@@ -36,7 +60,7 @@ const LoginScreen = () =>{
           onPress={onSubmit}
           buttonStyle={styles.loginBtnStyle}
         />
-      
+      </KeyboardAvoidingView>
 
       <Text onPress={goToSignUp} style={styles.goToSignUp}>
         Do not have an account? Sign up
@@ -67,8 +91,8 @@ const LoginScreen = () =>{
       </View>
     </View>
   );
+}
 
-        }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -95,7 +119,8 @@ const styles = StyleSheet.create({
     borderColor: colors.primary,
     borderRadius: 8,
     padding: 6,
-    
+    // width: "100%",
+    // height: 52,
   },
   inputlabelStyle: {
     marginLeft: 10,
@@ -132,4 +157,3 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
 });
-export default LoginScreen;
