@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, View, ScrollView, Text,Button } from "react-native";
 import { Button, Input } from "react-native-elements";
-import Icon from "react-native-vector-icons/MaterialIcons";
-import McIcon from "react-native-vector-icons/MaterialCommunityIcons";
+//import Icon from "react-native-vector-icons/MaterialIcons";
+//import McIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const SearchScreen = () =>{
     return (
