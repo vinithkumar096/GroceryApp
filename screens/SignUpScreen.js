@@ -1,10 +1,34 @@
-import React from "react";
-import { View, Text,StyleSheet,ScrollView,TouchableOpacity,Button} from "react-native";
-//import { Button } from "react-native-elements";
-//import { SocialIcon } from "react-native-elements";
+import { useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  KeyboardAvoidingView,
+  ScrollView,
+} from "react-native";
+import { Button, Input } from "react-native-elements";
+import { SocialIcon } from "react-native-elements";
+import colors from "../constants/colors";
+import { useAuth } from "../context/AuthProvider";
 
+import { useGoogleSignIn, useFacebookSignIn } from "../helpers/socialAuth";
 
-const SignUpScreen = () => {
+export default function SignUpScreen({ navigation }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState();
+  const { signInWithGoogle } = useGoogleSignIn();
+  const { signInWithFacebook } = useFacebookSignIn();
+  const { register } = useAuth()
+
+  const onSubmit = () => {
+    register({ name, email, password, password2 })
+  };
+
+  function goToLogin() {
+    navigation.navigate("LoginScreen");
+  }
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -21,7 +45,14 @@ const SignUpScreen = () => {
           Sign up
         </Text>
 
-  
+        <KeyboardAvoidingView style={styles.inputViewStyle} behavior="padding">
+          <Text style={styles.inputlabelStyle}>Name</Text>
+          <Input
+            placeholder="Enter name..."
+            inputStyle={styles.inputStyle}
+            inputContainerStyle={styles.inputContainerStyle}
+            onChangeText={(text) => setName(text.trim())}
+          />
 
           <Text style={styles.inputlabelStyle}>Email</Text>
           <Input
@@ -52,7 +83,7 @@ const SignUpScreen = () => {
             onPress={onSubmit}
             buttonStyle={styles.signupBtnStyle}
           />
-        
+        </KeyboardAvoidingView>
 
         <Text onPress={goToLogin} style={styles.goToSignIn}>
           Have an account? Log in
@@ -150,4 +181,3 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
 });
-export default SignUpScreen;
