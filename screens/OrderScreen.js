@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-nati
 import { Button } from "react-native-elements/dist/buttons/Button";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
-const OrdersScreen = ({navigation}) => {
+const OrderScreen = ({navigation}) => {
     const goBack = () => {
         navigation.navigate("AccountScreen");
       };
@@ -76,7 +76,7 @@ const OrdersScreen = ({navigation}) => {
     )
 }
 
-export default OrdersScreen;
+export default OrderScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
