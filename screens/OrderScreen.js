@@ -68,7 +68,7 @@ const OrderScreen = ({navigation}) => {
                     </View>
                 
                 <Text>Monday jan 03 2022 .....(order time)</Text>
-                <Text style={{ color: colors.navItemActive, fontWeight: "bold" }}>order status(placed..delivered..)</Text>
+                <Text style={{ color: "#008000", fontWeight: "bold" }}>order status(placed..delivered..)</Text>
             </View>
 
         </View>
