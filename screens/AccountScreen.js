@@ -3,7 +3,13 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity,Button } from "rea
 import Icon from "react-native-vector-icons/MaterialIcons";
 //import { Button } from "react-native-elements";
 
-const AccountScreen = () => {
+const AccountScreen = ({navigation}) => {
+    function goToViewOrders() {
+    navigation.navigate("ViewOrdersScreen");
+  }
+  function goToMyOrders() {
+    navigation.navigate("OrderScreen");
+  }
     return (
         <View style={styles.container} >
             <ScrollView>
