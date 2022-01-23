@@ -4,7 +4,7 @@ import { Button, Input } from "react-native-elements";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import McIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import Product from "../components/Product";
-import { getAllProducts } from "../helpers/methods";
+
 
 export default function SearchScreen({ navigation }) {
     const [loading, setLoading] = useState(false);
