@@ -1,10 +1,49 @@
-import React from "react";
-import { StyleSheet, View, ScrollView, Text,Button } from "react-native";
+import { useEffect, useState } from "react";
+import { StyleSheet, View, ScrollView, Text } from "react-native";
 import { Button, Input } from "react-native-elements";
-//import Icon from "react-native-vector-icons/MaterialIcons";
-//import McIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import Icon from "react-native-vector-icons/MaterialIcons";
+import McIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import Product from "../components/Product";
+import { getAllProducts } from "../helpers/methods";
 
-const SearchScreen = () =>{
+export default function SearchScreen({ navigation }) {
+    const [loading, setLoading] = useState(false);
+    const [search, setSearch] = useState("");
+    const [allResults, setAllResults] = useState([]);
+    const [results, setResults] = useState([]);
+    const [filter, setFilter] = useState(null);
+    const [sort, setSort] = useState(null)
+
+    const handleSearch = () => {
+        setLoading(true);
+        let products;
+        getAllProducts(data => {
+            products = data;
+            setAllResults(
+                products.filter(product =>
+                    product.title
+                        .toLowerCase()
+                        .includes(search.toLocaleLowerCase())
+                )
+            );
+            setLoading(false);
+        }, console.log);
+    };
+
+    useEffect(() => {
+        getAllProducts((data) => {
+            setAllResults(data)
+        }, console.log)
+    }, [])
+
+    useEffect(() => {
+        if (filter) {
+            setResults(allResults.filter(result => result.category === filter))
+        } else {
+            setResults(allResults)
+        }
+    }, [filter, allResults])
+
     return (
         <View style={styles.searchView}>
             <Input
@@ -67,7 +106,19 @@ const SearchScreen = () =>{
                             color={sort === "price" ? "white" : "rgba(51, 51, 51, 0.75)"}
                         />
                     }
-                    
+                    iconPosition="right"
+                    onPress={() => {
+                        setSort(prev => {
+                            if (prev === "price") {
+                                setResults(prev => prev.sort((a, b) => a.id > b.id))
+                                return null
+                            } else {
+                                setResults(prev => prev.sort((a, b) => a.price > b.price))
+                                return "price"
+                            }
+                        })
+                    }}
+                />
                 <Button
                     buttonStyle={sort === 'title' ? styles.sfBtnActive : styles.sfBtn}
                     title="Title"
@@ -83,10 +134,21 @@ const SearchScreen = () =>{
                             size={20}
                             color={sort === "title" ? "white" : "rgba(51, 51, 51, 0.75)"}
                         />
-                    
                     }
-                
-            
+                    iconPosition="right"
+                    onPress={() => {
+                        setSort(prev => {
+                            if (prev === "title") {
+                                setResults(prev => prev.sort((a, b) => a.id > b.id))
+                                return null
+                            } else {
+                                setResults(prev => prev.sort((a, b) => a.title > b.title))
+                                return "title"
+                            }
+                        })
+                    }}
+                />
+            </View>
 
             <ScrollView>
                 {loading && (
@@ -118,7 +180,6 @@ const SearchScreen = () =>{
                     ))}
                 </View>
             </ScrollView>
-        </View>
         </View>
     );
 }
@@ -172,4 +233,3 @@ const styles = StyleSheet.create({
         overflow: "hidden",
     },
 });
-export default SearchScreen;
