@@ -1,10 +1,26 @@
-import React from "react";
-import { View, Text, ScrollView,Button } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import { StyleSheet } from "react-native";
-//import { Button } from "react-native-elements";
+import Cartitem from "../components/Cartitem";
+import { Button } from "react-native-elements";
+import { useAppState } from "../context/AppStateProvider";
+import { addOrder } from "../helpers/methods";
+import { useAuth } from "../context/AuthProvider";
+import sendConfirmationEmail from "../emailkey";
 
-const CartScreen = () => {
 
+export default function CartScreen({ navigation }) {
+  const { cart, getCartTotal, clearCart } = useAppState();
+  const { user } = useAuth();
+
+  const goToOrders = () => {
+    if (cart.length < 1) return
+    addOrder(user?.email, cart, () => {
+      sendConfirmationEmail(user.name, user.email);
+      clearCart();
+      navigation.navigate("OrderScreen", {message: true});
+      alert("Order added successfully");
+    }, console.log);
+  }
 
   return (
     <View style={styles.container}>
@@ -47,4 +63,3 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
 });
-export default CartScreen;
