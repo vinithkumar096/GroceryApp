@@ -10,6 +10,9 @@ const AccountScreen = ({navigation}) => {
   function goToMyOrders() {
     navigation.navigate("OrderScreen");
   }
+  function goToAddProduct() {
+    navigation.navigate("AddProductScreen");
+  }
     return (
         <View style={styles.container} >
             <ScrollView>
@@ -27,7 +30,7 @@ const AccountScreen = ({navigation}) => {
               title="Add product"
               icon={<Icon name="add" size={24} style={styles.iconStyle} />}
               iconPosition="right"
-              
+              onPress={goToAddProduct}
             />
             <Button
               buttonStyle={[styles.btnsTyle, {alignSelf: "center"}]}
