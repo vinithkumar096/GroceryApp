@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import FavoriteItem from "../components/FavoriteItem";
+import { useAppState } from "../context/AppStateProvider";
 
-
+export default function FavouritesScreen({ navigation }) {
   const { favourites } = useAppState();
 
   return (
@@ -19,7 +20,7 @@ import FavoriteItem from "../components/FavoriteItem";
       </ScrollView>
     </View>
   );
-
+}
 
 const styles = StyleSheet.create({
   container: {
