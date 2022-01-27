@@ -1,0 +1,74 @@
+[
+    {
+        "id": "1",
+        "title": "Strawberries",
+        "price": "4.09",
+        "description": "Tasty berries",
+        "image": "strawberries",
+        "category": "fruits",
+        "rating": 4.1
+    },
+    {
+        "id": "2",
+        "title": "Oranges",
+        "price": "2.00",
+        "description": "Cool, sweet oranges",
+        "image": "oranges",
+        "category": "fruits",
+        "rating": 3.9
+    },
+    {
+        "id": "3",
+        "title": "Green Apples",
+        "price": "0.7",
+        "description": "Lovely, amazing, sweet green apples",
+        "image": "greenapples",
+        "category": "fruits",
+        "rating": 4.2
+    },
+    {
+        "id": "4",
+        "title": "Carrots",
+        "price": "2.00",
+        "description": "Healthy, tasy carrots",
+        "image": "carrots",
+        "category": "vegetables",
+        "rating": 4.3
+    },
+    {
+        "id": "5",
+        "title": "Cauliflower",
+        "price": "1.00",
+        "description": "Very nutritious cauliflower",
+        "image": "cauliflower",
+        "category": "vegetables",
+        "rating": 4.0
+    },
+    {
+        "id": "6",
+        "title": "Cucumbers",
+        "price": "1.05",
+        "description": "Large, great cucumbers",
+        "image": "cucumbers",
+        "category": "vegetables",
+        "rating": 3.8
+    },
+    {
+        "id": "7",
+        "title": "Onions",
+        "price": "0.50",
+        "description": "Amazing onions!",
+        "image": "onions",
+        "category": "vegetables",
+        "rating": 3.9
+    },
+    {
+        "id": "8",
+        "title": "Red Apples",
+        "price": "0.6",
+        "description": "Sweet, tasty, lovely!",
+        "image": "apples",
+        "category": "fruits",
+        "rating": 4.4
+    }
+]
