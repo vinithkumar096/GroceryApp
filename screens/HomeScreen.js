@@ -8,7 +8,7 @@ import {
   ScrollView,
   RefreshControl,
 } from "react-native";
-import ProductCategory from "../Components/ProductCategory";
+import ProductCategory from "../components/ProductCategory";
 import colors from "../constants/colors";
 import { getFruits, getVegetables } from "../helpers/methods";
 
