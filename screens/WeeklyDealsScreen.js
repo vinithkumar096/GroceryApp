@@ -6,10 +6,11 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { useState } from "react";
 
 const weeklyDeals = [
-  {id: 1, title: "Apples", price: 0.5, was: 0.6, image: require("../assets/images/apples.png")},
-  {id: 2, title: "Strawberries", price: 4.09, was: 4.99, image: require("../assets/images/strawberries.png")},
-  {id: 3, title: "Carrots", price: 2.00, was: 2.50, image: require("../assets/images/carrots.png")},
+  {id: "11", title: "Apples", price: "0.5", was: "0.6", image: 'apples', category: "fruits", rating: 4.4},
+  {id: "12", title: "Strawberries", price: "4.09", was: "4.99", image: 'strawberries', category: "fruits", rating: 4.1},
+  {id: "13", title: "Carrots", price: "2.00", was: "2.50", image: 'carrots', category: "vegetables", rating: 4.3},
 ]
+
 
 export default function WeeklyDealsScreen({ navigation }) {
   const [deals, setDeals] = useState(weeklyDeals);
